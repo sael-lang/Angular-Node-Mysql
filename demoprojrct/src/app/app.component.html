@@ -1,0 +1,15 @@
+
+<div style="text-align:center">
+	<div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+	<div sty><img style=" height: 100px;width: 100px;" [src]="url" *ngIf="url"></div>
+	<p>
+		<input type="file" name="files" enctype="multipart/form-data" (change)="selectFile($event)">
+    <button class="btn btn-dark" (click)="createContact()">Save Image</button>
+	</p>
+	
+	<div *ngFor="let imageUrl of source; let i = index">
+		<div>{{ i + 1 }}</div> 
+		<img style="height: 100px; width: 100px;" [src]="getImageUrl(imageUrl)" alt="Image">
+	  </div>
+	  
+</div>
